@@ -1,6 +1,8 @@
 package com.jackandphantom.carousellayout
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.Gravity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -34,9 +36,9 @@ class MainActivity : AppCompatActivity() {
         binding.recycler.apply {
             this.adapter = adapter
 //            set3DItem(true)
-//            setInfinite(true)
+            setInfinite(true)
             setAlpha(true)
-//            setIntervalRatio(0.7f)
+            setIntervalRatio(0.6f)
 //            setFlat(true)
             setIsScrollingEnabled(true)
             setOrientation(RecyclerView.VERTICAL)
@@ -49,5 +51,16 @@ class MainActivity : AppCompatActivity() {
         binding.button.setOnClickListener {
             adapter.removeData()
         }
+
+//        handler.postDelayed(runnable, 2000)
     }
+
+//    val handler = Handler(Looper.getMainLooper())
+
+//    val runnable = Runnable {
+//        binding.recycler.apply {
+//            setIntervalRatio(0.4f)
+//        }
+//    }
+
 }
